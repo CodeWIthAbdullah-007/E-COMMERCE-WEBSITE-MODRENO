@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — MODERNO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">MODER<span>NO</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-action-btn" title="Wishlist" onclick="window.location.href='wishlist.html'"><svg
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg><span class="nav-badge wishlist-badge">0</span></button>
+        <button class="nav-action-btn" onclick="window.location.href='cart.html'" title="Cart"><svg viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg><span class="nav-badge">0</span></button>
+        <button class="mobile-menu-btn" onclick="openMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <button class="mobile-close" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg></button>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a><a href="shop.html" onclick="closeMobileMenu()">Shop</a><a
+      href="about.html" onclick="closeMobileMenu()">About</a><a href="contact.html"
+      onclick="closeMobileMenu()">Contact</a><a href="wishlist.html" onclick="closeMobileMenu()">Wishlist</a><a
+      href="cart.html" onclick="closeMobileMenu()">Cart</a>
+  </div>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">›</span> <span>Shop</span>
+      </div>
+      <h1 class="page-header-title">Our Collection</h1>
+      <p class="page-header-desc">Discover furniture designed to elevate every moment at home</p>
+    </div>
+  </div>
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:32px;flex-wrap:wrap">
+        <button class="tab-btn active" onclick="filterProducts('all',this)">All</button>
+        <button class="tab-btn" onclick="filterProducts('sofa',this)">Sofas</button>
+        <button class="tab-btn" onclick="filterProducts('chair',this)">Chairs</button>
+        <button class="tab-btn" onclick="filterProducts('table',this)">Tables</button>
+        <button class="tab-btn" onclick="filterProducts('lamp',this)">Lamps</button>
+        <button class="tab-btn" onclick="filterProducts('bed',this)">Beds</button>
+        <button class="tab-btn" onclick="filterProducts('shelf',this)">Shelves</button>
+        <button class="tab-btn" onclick="filterProducts('rug',this)">Rugs</button>
+        <div style="margin-left:auto"><select class="input-field" style="width:auto;padding:10px 16px;font-size:0.8rem"
+            onchange="sortProducts(this.value)">
+            <option value="default">Sort by: Default</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+          </select></div>
+      </div>
+      <div style="font-size:0.85rem;color:var(--muted);margin-bottom:24px" id="resultCount"></div>
+      <div id="shopGrid" class="shop-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px"></div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding:0">
+        <div class="nav-logo" style="color:white">MODER<span>NO</span></div>
+        <div class="footer-copy">© 2025 MODERNO. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    var currentFilter = 'all'; var currentSort = 'default';
+    function filterProducts(cat, btn) { currentFilter = cat; document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); }); btn.classList.add('active'); renderShop(); }
+    function sortProducts(val) { currentSort = val; renderShop(); }
+    function renderShop() {
+      var filtered = currentFilter === 'all' ? PRODUCTS.slice() : PRODUCTS.filter(function (p) { return p.category === currentFilter; });
+      if (currentSort === 'low') filtered.sort(function (a, b) { return a.price - b.price; });
+      else if (currentSort === 'high') filtered.sort(function (a, b) { return b.price - a.price; });
+      else if (currentSort === 'name') filtered.sort(function (a, b) { return a.name.localeCompare(b.name); });
+      document.getElementById('resultCount').textContent = 'Showing ' + filtered.length + ' products';
+      document.getElementById('shopGrid').innerHTML = filtered.map(function (p) { return createProductCard(p); }).join('');
+      initScrollAnimations(); setTimeout(initCursor, 100);
+    }
+    document.addEventListener('DOMContentLoaded', renderShop);
+  </script>
+</body>
+
+</html>

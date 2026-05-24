@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — MODERNO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-ring"></div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">MODER<span>NO</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn" title="Wishlist" onclick="window.location.href='wishlist.html'"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg><span class="nav-badge wishlist-badge">0</span></button>
+                <button class="nav-action-btn" onclick="window.location.href='cart.html'" title="Cart"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg><span class="nav-badge">0</span></button>
+                <button class="mobile-menu-btn" onclick="openMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5">
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <button class="mobile-close" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg></button>
+        <a href="index.html" onclick="closeMobileMenu()">Home</a><a href="shop.html"
+            onclick="closeMobileMenu()">Shop</a><a href="about.html" onclick="closeMobileMenu()">About</a><a
+            href="contact.html" onclick="closeMobileMenu()">Contact</a><a href="wishlist.html"
+            onclick="closeMobileMenu()">Wishlist</a><a href="cart.html" onclick="closeMobileMenu()">Cart</a>
+    </div>
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">›</span>
+                <span>Contact</span></div>
+            <h1 class="page-header-title">Get In Touch</h1>
+            <p class="page-header-desc">We'd love to hear from you. Let's create something beautiful together.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px">
+                <div class="anim-left">
+                    <h2
+                        style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:32px">
+                        Send Us a Message</h2>
+                    <form
+                        onsubmit="event.preventDefault();showToast('Message sent! We will get back to you soon.');this.reset();">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px"><input
+                                class="input-field" placeholder="First Name" required><input class="input-field"
+                                placeholder="Last Name" required></div>
+                        <input class="input-field" placeholder="Email Address" type="email" required
+                            style="margin-bottom:16px">
+                        <input class="input-field" placeholder="Phone Number" style="margin-bottom:16px">
+                        <select class="input-field" style="margin-bottom:16px">
+                            <option value="" disabled selected>Subject</option>
+                            <option>General Inquiry</option>
+                            <option>Order Support</option>
+                            <option>Design Consultation</option>
+                            <option>Custom Orders</option>
+                            <option>Returns and Warranty</option>
+                        </select>
+                        <textarea class="input-field" placeholder="Your Message" required
+                            style="margin-bottom:24px"></textarea>
+                        <button type="submit" class="btn btn-primary" style="width:100%"><span>Send
+                                Message</span></button>
+                    </form>
+                </div>
+                <div class="anim-right">
+                    <h2
+                        style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:32px">
+                        Contact Info</h2>
+                    <div style="display:flex;flex-direction:column;gap:28px;margin-bottom:40px">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon" style="background:rgba(200,149,108,0.12)"><svg width="22"
+                                    height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)"
+                                    stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg></div>
+                            <div>
+                                <div class="contact-info-label">Visit Our Showroom</div>
+                                <div class="contact-info-value">Via Tortona 27, 20144 Milano MI, Italy</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon" style="background:rgba(45,95,93,0.12)"><svg width="22"
+                                    height="22" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg></div>
+                            <div>
+                                <div class="contact-info-label">Email Us</div>
+                                <div class="contact-info-value">hello@moderno.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon" style="background:rgba(224,122,95,0.12)"><svg width="22"
+                                    height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg></div>
+                            <div>
+                                <div class="contact-info-label">Call Us</div>
+                                <div class="contact-info-value">+39 02 8739 4521</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon" style="background:rgba(129,178,154,0.12)"><svg width="22"
+                                    height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)"
+                                    stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg></div>
+                            <div>
+                                <div class="contact-info-label">Working Hours</div>
+                                <div class="contact-info-value">Mon – Sat: 10:00 – 19:00 CET</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hover-map-glow"
+                        style="background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;height:280px;display:flex;align-items:center;justify-content:center">
+                        <div style="text-align:center;color:var(--muted)">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" style="margin:0 auto 8px;display:block">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div style="font-size:0.85rem">Interactive Map</div>
+                            <div style="font-size:0.75rem;margin-top:4px">Via Tortona 27, Milano</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-alt)">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:60px" class="anim-up">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> FAQ <div class="section-tag-line"></div>
+                </div>
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+            <div style="max-width:700px;margin:0 auto">
+                <div class="faq-item anim-up delay-1">
+                    <button onclick="this.parentElement.classList.toggle('open')"
+                        style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--dark);text-align:left">
+                        What is your delivery timeframe?
+                        <span class="faq-toggle" style="font-size:1.4rem;color:var(--primary)">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div style="padding:0 24px 20px;color:var(--text-light);font-size:0.9rem;line-height:1.7">
+                            Standard delivery takes 5-7 business days. White-glove delivery with in-home setup takes
+                            7-10 business days. You will receive tracking information via email once your order ships.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item anim-up delay-2">
+                    <button onclick="this.parentElement.classList.toggle('open')"
+                        style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--dark);text-align:left">
+                        Can I return or exchange my furniture?
+                        <span class="faq-toggle" style="font-size:1.4rem;color:var(--primary)">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div style="padding:0 24px 20px;color:var(--text-light);font-size:0.9rem;line-height:1.7">
+                            Absolutely. We offer a 30-day hassle-free return policy. If you are not completely
+                            satisfied, we will arrange pickup and process your full refund. No restocking fees.</div>
+                    </div>
+                </div>
+                <div class="faq-item anim-up delay-3">
+                    <button onclick="this.parentElement.classList.toggle('open')"
+                        style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--dark);text-align:left">
+                        Do you offer custom orders?
+                        <span class="faq-toggle" style="font-size:1.4rem;color:var(--primary)">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div style="padding:0 24px 20px;color:var(--text-light);font-size:0.9rem;line-height:1.7">Yes!
+                            Many of our pieces can be customized in terms of fabric, finish, and dimensions. Contact our
+                            design team for a consultation and we will bring your vision to life.</div>
+                    </div>
+                </div>
+                <div class="faq-item anim-up delay-4">
+                    <button onclick="this.parentElement.classList.toggle('open')"
+                        style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--dark);text-align:left">
+                        What warranty do you provide?
+                        <span class="faq-toggle" style="font-size:1.4rem;color:var(--primary)">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div style="padding:0 24px 20px;color:var(--text-light);font-size:0.9rem;line-height:1.7">All
+                            MODERNO furniture comes with a 5-year warranty covering manufacturing defects and structural
+                            issues. Our frames carry a lifetime warranty.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="nav-logo" style="color:white">MODER<span>NO</span></div>
+                    <p class="footer-brand-desc">Crafting premium furniture that transforms houses into homes.</p>
+                </div>
+                <div>
+                    <div class="footer-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Support</div>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Legal</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 MODERNO. All rights reserved.</div>
+                <div class="footer-socials">
+                    <button class="footer-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <circle cx="12" cy="12" r="5" />
+                            <circle cx="17.5" cy="6.5" r="1.5" />
+                        </svg></button>
+                    <button class="footer-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg></button>
+                    <button class="footer-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

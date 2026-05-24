@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — MODERNO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">MODER<span>NO</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-action-btn" title="Wishlist" onclick="window.location.href='wishlist.html'"><svg
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg><span class="nav-badge wishlist-badge">0</span></button>
+        <button class="nav-action-btn" onclick="window.location.href='cart.html'" title="Cart"><svg viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg><span class="nav-badge">0</span></button>
+        <button class="mobile-menu-btn" onclick="openMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <button class="mobile-close" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg></button>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a><a href="shop.html" onclick="closeMobileMenu()">Shop</a><a
+      href="about.html" onclick="closeMobileMenu()">About</a><a href="contact.html"
+      onclick="closeMobileMenu()">Contact</a><a href="wishlist.html" onclick="closeMobileMenu()">Wishlist</a><a
+      href="cart.html" onclick="closeMobileMenu()">Cart</a>
+  </div>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">›</span> <span>Shopping
+          Bag</span></div>
+      <h1 class="page-header-title">Your Bag</h1>
+    </div>
+  </div>
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <div id="cartEmpty" class="empty-state" style="display:none">
+        <div class="empty-state-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg></div>
+        <div class="empty-state-title">Your bag is empty</div>
+        <div class="empty-state-desc">Looks like you haven't added any furniture yet</div>
+        <a href="shop.html" class="btn btn-primary"><span>Start Shopping</span></a>
+      </div>
+      <div id="cartContent" class="cart-content-grid"
+        style="display:none;grid-template-columns:1fr 380px;gap:40px;align-items:start">
+        <div id="cartItems"></div>
+        <div>
+          <div class="cart-summary">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:24px">Order
+              Summary</h3>
+            <div class="cart-summary-row"><span>Subtotal</span><span id="cartSubtotal">$0</span></div>
+            <div class="cart-summary-row"><span>Shipping</span><span style="color:var(--accent2)">Free</span></div>
+            <div class="cart-summary-row"><span>Tax (est.)</span><span id="cartTax">$0</span></div>
+            <div class="cart-summary-total"><span>Total</span><span id="cartTotal">$0</span></div>
+            <a href="checkout.html" class="btn btn-primary" style="width:100%;margin-top:24px"><span>Proceed to
+                Checkout</span></a>
+            <a href="shop.html" class="btn btn-outline" style="width:100%;margin-top:12px">Continue Shopping</a>
+          </div>
+          <div
+            style="margin-top:24px;padding:24px;background:var(--card);border-radius:var(--radius);border:1px solid var(--border);transition:all var(--transition)"
+            onmouseover="this.style.borderColor='var(--primary-light)'"
+            onmouseout="this.style.borderColor='var(--border)'">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><svg width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg><span style="font-weight:600;font-size:0.85rem">Secure Checkout</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><svg width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg><span style="font-weight:600;font-size:0.85rem">Free White-Glove Delivery</span></div>
+            <div style="display:flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24"
+                fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+              </svg><span style="font-weight:600;font-size:0.85rem">30-Day Easy Returns</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding:0">
+        <div class="nav-logo" style="color:white">MODER<span>NO</span></div>
+        <div class="footer-copy">© 2025 MODERNO. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    window.renderCart = function () {
+      var cart = getCart(); var emptyEl = document.getElementById('cartEmpty'); var contentEl = document.getElementById('cartContent'); var itemsEl = document.getElementById('cartItems');
+      if (cart.length === 0) { emptyEl.style.display = 'block'; contentEl.style.display = 'none'; return; }
+      emptyEl.style.display = 'none'; contentEl.style.display = 'grid';
+      itemsEl.innerHTML = cart.map(function (item) {
+        return '<div class="cart-item" style="margin-bottom:16px">' +
+          '<img src="' + item.image + '" alt="' + item.name + '" class="cart-item-img">' +
+          '<div><div class="cart-item-name">' + item.name + '</div><div class="cart-item-price">$' + item.price + '</div>' +
+          '<div style="display:flex;align-items:center;gap:16px;margin-top:8px">' +
+          '<div class="qty-control"><button class="qty-btn" onclick="updateCartQty(' + item.id + ',-1)">−</button><div class="qty-value">' + item.qty + '</div><button class="qty-btn" onclick="updateCartQty(' + item.id + ',1)">+</button></div>' +
+          '<button class="cart-item-remove" onclick="removeFromCart(' + item.id + ')">Remove</button></div></div>' +
+          '<div class="cart-item-total">$' + (item.price * item.qty) + '</div></div>';
+      }).join('');
+      var subtotal = getCartTotal(); var tax = Math.round(subtotal * 0.08);
+      document.getElementById('cartSubtotal').textContent = '$' + subtotal;
+      document.getElementById('cartTax').textContent = '$' + tax;
+      document.getElementById('cartTotal').textContent = '$' + (subtotal + tax);
+      setTimeout(initCursor, 100);
+    };
+    document.addEventListener('DOMContentLoaded', function () { window.renderCart(); });
+  </script>
+</body>
+
+</html>

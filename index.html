@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODERNO — Live Beautifully</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-ring"></div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">MODER<span>NO</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn" title="Wishlist" onclick="window.location.href='wishlist.html'"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg><span class="nav-badge wishlist-badge">0</span></button>
+                <button class="nav-action-btn" onclick="window.location.href='cart.html'" title="Cart"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg><span class="nav-badge">0</span></button>
+                <button class="mobile-menu-btn" onclick="openMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5">
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <button class="mobile-close" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg></button>
+        <a href="index.html" onclick="closeMobileMenu()">Home</a><a href="shop.html"
+            onclick="closeMobileMenu()">Shop</a><a href="about.html" onclick="closeMobileMenu()">About</a><a
+            href="contact.html" onclick="closeMobileMenu()">Contact</a><a href="wishlist.html"
+            onclick="closeMobileMenu()">Wishlist</a><a href="cart.html" onclick="closeMobileMenu()">Cart</a>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <div>
+                <div class="hero-tag">
+                    <div class="hero-tag-dot"></div>New Collection 2025
+                </div>
+                <h1 class="hero-title">Best Prices &<br><span>Best Quality</span></h1>
+                <p class="hero-desc">Discover handcrafted furniture that transforms your living space into a sanctuary
+                    of style and comfort.</p>
+                <div class="hero-btns"><a href="shop.html" class="btn btn-primary"><span>Shop Now</span></a><a
+                        href="about.html" class="btn btn-outline">Our Story</a></div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">50+</div>
+                        <div class="hero-stat-label">Room Inspirations</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">12K+</div>
+                        <div class="hero-stat-label">Happy Customers</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">4.9</div>
+                        <div class="hero-stat-label">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+                    alt="Modern Sofa" class="hero-image-main">
+                <img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&w=300&q=80"
+                    alt="Coffee Table" class="hero-image-float">
+                <div class="hero-image-badge">
+                    <div class="hero-image-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg></div>
+                    <div class="hero-image-badge-text">Top Rated</div>
+                    <div class="hero-image-badge-sub">by Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="marquee-section">
+        <div class="marquee-track">
+            <span class="marquee-item">Sofas <span>✦</span></span><span class="marquee-item">Chairs
+                <span>✦</span></span><span class="marquee-item">Tables <span>✦</span></span><span
+                class="marquee-item">Lamps <span>✦</span></span><span class="marquee-item">Beds
+                <span>✦</span></span><span class="marquee-item">Shelves <span>✦</span></span><span
+                class="marquee-item">Rugs <span>✦</span></span>
+            <span class="marquee-item">Sofas <span>✦</span></span><span class="marquee-item">Chairs
+                <span>✦</span></span><span class="marquee-item">Tables <span>✦</span></span><span
+                class="marquee-item">Lamps <span>✦</span></span><span class="marquee-item">Beds
+                <span>✦</span></span><span class="marquee-item">Shelves <span>✦</span></span><span
+                class="marquee-item">Rugs <span>✦</span></span>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="anim-up" style="text-align:center;margin-bottom:60px">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> Categories <div class="section-tag-line"></div>
+                </div>
+                <h2 class="section-title">Browse by Style</h2>
+                <p class="section-desc" style="margin:0 auto">Find the perfect piece for every room in your home</p>
+            </div>
+            <div class="category-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+                <a href="shop.html" class="category-card anim-left delay-1"><img
+                        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
+                        alt="Living Room">
+                    <div class="category-card-overlay">
+                        <div class="category-card-title">Living Room</div>
+                        <div class="category-card-count">24 Products</div>
+                        <div class="category-card-line"></div>
+                    </div>
+                </a>
+                <a href="shop.html" class="category-card anim-up delay-2"><img
+                        src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80"
+                        alt="Bedroom">
+                    <div class="category-card-overlay">
+                        <div class="category-card-title">Bedroom</div>
+                        <div class="category-card-count">18 Products</div>
+                        <div class="category-card-line"></div>
+                    </div>
+                </a>
+                <a href="shop.html" class="category-card anim-right delay-3"><img
+                        src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=600&q=80"
+                        alt="Dining">
+                    <div class="category-card-overlay">
+                        <div class="category-card-title">Dining</div>
+                        <div class="category-card-count">12 Products</div>
+                        <div class="category-card-line"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background:var(--bg-alt)">
+        <div class="container">
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:20px"
+                class="anim-up">
+                <div>
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div> Featured
+                    </div>
+                    <h2 class="section-title">Our Bestsellers</h2>
+                </div>
+                <a href="shop.html" class="btn btn-outline">View All →</a>
+            </div>
+            <div id="featuredGrid" class="shop-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="anim-up" style="text-align:center;margin-bottom:60px">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> Inspiration <div class="section-tag-line"></div>
+                </div>
+                <h2 class="section-title">50+ Beautiful Rooms</h2>
+            </div>
+            <div class="inspiration-grid"
+                style="display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:16px">
+                <div class="inspiration-card anim-left delay-1" style="grid-row:span 2"><img
+                        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+                        alt="Living Room" style="height:100%">
+                    <div class="inspiration-card-overlay">
+                        <div class="inspiration-card-title">Modern Living Space</div>
+                    </div>
+                </div>
+                <div class="inspiration-card anim-up delay-2"><img
+                        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400&q=80"
+                        alt="Kitchen" style="height:100%">
+                    <div class="inspiration-card-overlay">
+                        <div class="inspiration-card-title">Minimal Kitchen</div>
+                    </div>
+                </div>
+                <div class="inspiration-card anim-right delay-3"><img
+                        src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80"
+                        alt="Bedroom" style="height:100%">
+                    <div class="inspiration-card-overlay">
+                        <div class="inspiration-card-title">Cozy Bedroom</div>
+                    </div>
+                </div>
+                <div class="inspiration-card anim-up delay-4"><img
+                        src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=400&q=80"
+                        alt="Scandinavian" style="height:100%">
+                    <div class="inspiration-card-overlay">
+                        <div class="inspiration-card-title">Scandinavian Style</div>
+                    </div>
+                </div>
+                <div class="inspiration-card anim-right delay-5"><img
+                        src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80"
+                        alt="Loft" style="height:100%">
+                    <div class="inspiration-card-overlay">
+                        <div class="inspiration-card-title">Urban Loft</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background:var(--dark);color:white;padding:80px 0">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+                <div class="anim-left">
+                    <div class="section-tag" style="color:var(--accent3)">
+                        <div class="section-tag-line" style="background:var(--accent3)"></div> Limited Edition
+                    </div>
+                    <h2
+                        style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:20px;line-height:1.15">
+                        The Gorgoni<br><span style="color:var(--primary-light);font-style:italic">Chair
+                            Collection</span></h2>
+                    <p
+                        style="color:rgba(255,255,255,0.5);font-size:1.05rem;line-height:1.7;margin-bottom:32px;max-width:440px">
+                        Hand-sculpted from Italian leather with a solid walnut frame. Only 50 pieces available
+                        worldwide.</p>
+                    <a href="shop.html" class="btn btn-accent"><span>Shop the Collection</span></a>
+                </div>
+                <div class="anim-right"><img
+                        src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=600&q=80"
+                        alt="Gorgoni Chair"
+                        style="width:100%;height:500px;object-fit:cover;border-radius:var(--radius);transition:all 0.6s var(--transition)"
+                        onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="anim-up" style="text-align:center;margin-bottom:60px">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> Why Us <div class="section-tag-line"></div>
+                </div>
+                <h2 class="section-title">Why Choose MODERNO</h2>
+            </div>
+            <div class="feature-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+                <div class="feature-card anim-up delay-1">
+                    <div class="feature-card-icon" style="background:rgba(200,149,108,0.1)"><svg width="28" height="28"
+                            viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg></div>
+                    <div class="feature-card-title">Premium Quality</div>
+                    <div class="feature-card-desc">Crafted from the finest materials sourced globally</div>
+                </div>
+                <div class="feature-card anim-up delay-2">
+                    <div class="feature-card-icon" style="background:rgba(45,95,93,0.1)"><svg width="28" height="28"
+                            viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="1.5">
+                            <rect x="1" y="3" width="15" height="13" />
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                            <circle cx="5.5" cy="18.5" r="2.5" />
+                            <circle cx="18.5" cy="18.5" r="2.5" />
+                        </svg></div>
+                    <div class="feature-card-title">Free Delivery</div>
+                    <div class="feature-card-desc">Complimentary white-glove delivery on orders over $500</div>
+                </div>
+                <div class="feature-card anim-up delay-3">
+                    <div class="feature-card-icon" style="background:rgba(224,122,95,0.1)"><svg width="28" height="28"
+                            viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
+                            <polyline points="23 4 23 10 17 10" />
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                        </svg></div>
+                    <div class="feature-card-title">Easy Returns</div>
+                    <div class="feature-card-desc">30-day hassle-free returns with full refund guarantee</div>
+                </div>
+                <div class="feature-card anim-up delay-4">
+                    <div class="feature-card-icon" style="background:rgba(129,178,154,0.1)"><svg width="28" height="28"
+                            viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            <path d="M12 6v6l4 2" />
+                        </svg></div>
+                    <div class="feature-card-title">Lifetime Warranty</div>
+                    <div class="feature-card-desc">Furniture built to last with comprehensive coverage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background:var(--bg-alt)">
+        <div class="container">
+            <div class="anim-up" style="text-align:center;margin-bottom:60px">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> Reviews <div class="section-tag-line"></div>
+                </div>
+                <h2 class="section-title">Loved by Thousands</h2>
+            </div>
+            <div class="testimonial-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+                <div class="testimonial-card anim-up delay-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"The Oslo Sofa completely transformed our living room. Quality is
+                        beyond what we expected."</div>
+                    <div class="testimonial-author"><img
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
+                            alt="Alex" class="testimonial-avatar">
+                        <div>
+                            <div class="testimonial-name">Alex Rivera</div>
+                            <div class="testimonial-role">Interior Designer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card anim-up delay-2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"From ordering to delivery, the experience was flawless. The Norden
+                        Coffee Table is a masterpiece."</div>
+                    <div class="testimonial-author"><img
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
+                            alt="Sarah" class="testimonial-avatar">
+                        <div>
+                            <div class="testimonial-name">Sarah Mitchell</div>
+                            <div class="testimonial-role">Architect</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card anim-up delay-3">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"I've furnished my entire apartment with MODERNO. The consistency in
+                        quality is remarkable."</div>
+                    <div class="testimonial-author"><img
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80"
+                            alt="James" class="testimonial-avatar">
+                        <div>
+                            <div class="testimonial-name">James Okafor</div>
+                            <div class="testimonial-role">Photographer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="nav-logo" style="color:white">MODER<span>NO</span></div>
+                    <p class="footer-brand-desc">Crafting premium furniture that transforms houses into homes.</p>
+                </div>
+                <div>
+                    <div class="footer-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Support</div>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Legal</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 MODERNO. All rights reserved.</div>
+                <div class="footer-socials">
+                    <button class="footer-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <circle cx="12" cy="12" r="5" />
+                            <circle cx="17.5" cy="6.5" r="1.5" />
+                        </svg></button>
+                    <button class="footer-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg></button>
+                    <button class="footer-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var grid = document.getElementById('featuredGrid');
+            if (grid) { grid.innerHTML = PRODUCTS.slice(0, 4).map(function (p) { return createProductCard(p); }).join(''); initScrollAnimations(); setTimeout(initCursor, 300); }
+        });
+    </script>
+</body>
+
+</html>

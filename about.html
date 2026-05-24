@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — MODERNO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-ring"></div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">MODER<span>NO</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn" title="Wishlist" onclick="window.location.href='wishlist.html'"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg><span class="nav-badge wishlist-badge">0</span></button>
+                <button class="nav-action-btn" onclick="window.location.href='cart.html'" title="Cart"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg><span class="nav-badge">0</span></button>
+                <button class="mobile-menu-btn" onclick="openMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5">
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <button class="mobile-close" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg></button>
+        <a href="index.html" onclick="closeMobileMenu()">Home</a><a href="shop.html"
+            onclick="closeMobileMenu()">Shop</a><a href="about.html" onclick="closeMobileMenu()">About</a><a
+            href="contact.html" onclick="closeMobileMenu()">Contact</a><a href="wishlist.html"
+            onclick="closeMobileMenu()">Wishlist</a><a href="cart.html" onclick="closeMobileMenu()">Cart</a>
+    </div>
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">›</span>
+                <span>About</span></div>
+            <h1 class="page-header-title">Our Story</h1>
+            <p class="page-header-desc">Crafting comfort, designing joy since 2015</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+                <div class="anim-left">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div> Who We Are
+                    </div>
+                    <h2
+                        style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;margin-bottom:20px">
+                        Furniture That Tells <span style="color:var(--primary);font-style:italic">Your Story</span></h2>
+                    <p style="color:var(--text-light);font-size:1.05rem;line-height:1.7;margin-bottom:16px">MODERNO was
+                        founded with a simple belief: your home should reflect who you are. Every piece of furniture we
+                        create is a conversation between form and function.</p>
+                    <p style="color:var(--text-light);font-size:1.05rem;line-height:1.7;margin-bottom:16px">From our
+                        workshop in Milan, our team of artisans and designers work together to craft pieces that aren't
+                        just functional — they're transformative.</p>
+                    <p style="color:var(--text-light);font-size:1.05rem;line-height:1.7">What started as a small studio
+                        has grown into a brand trusted by over 12,000 customers worldwide.</p>
+                </div>
+                <div class="anim-right">
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=800&q=80"
+                        alt="Workshop" class="hover-img-zoom"
+                        style="width:100%;height:560px;object-fit:cover;border-radius:var(--radius)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-alt)">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:60px" class="anim-up">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> By The Numbers <div class="section-tag-line"></div>
+                </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center">
+                <div class="anim-up delay-1">
+                    <div class="hover-stat"
+                        style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--primary)">
+                        10</div>
+                    <div
+                        style="font-size:0.85rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.1em">
+                        Years</div>
+                </div>
+                <div class="anim-up delay-2">
+                    <div class="hover-stat"
+                        style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--primary)">
+                        12K</div>
+                    <div
+                        style="font-size:0.85rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.1em">
+                        Customers</div>
+                </div>
+                <div class="anim-up delay-3">
+                    <div class="hover-stat"
+                        style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--primary)">
+                        40+</div>
+                    <div
+                        style="font-size:0.85rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.1em">
+                        Countries</div>
+                </div>
+                <div class="anim-up delay-4">
+                    <div class="hover-stat"
+                        style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--primary)">
+                        500+</div>
+                    <div
+                        style="font-size:0.85rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.1em">
+                        Designs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:60px" class="anim-up">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> Our Values <div class="section-tag-line"></div>
+                </div>
+                <h2 class="section-title">What Drives Us</h2>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+                <div class="feature-card anim-up delay-1">
+                    <div class="feature-card-icon" style="background:rgba(129,178,154,0.15)"><svg width="28" height="28"
+                            viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                            <path d="M12 22c4 0 8-2 8-5V9c0-3-4-5-8-5S4 6 4 9v8c0 3 4 5 8 5z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg></div>
+                    <div class="feature-card-title">Sustainable Sourcing</div>
+                    <div class="feature-card-desc">Every material is ethically sourced. FSC-certified woods, organic
+                        fabrics, and zero-waste packaging.</div>
+                </div>
+                <div class="feature-card anim-up delay-2">
+                    <div class="feature-card-icon" style="background:rgba(200,149,108,0.15)"><svg width="28" height="28"
+                            viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg></div>
+                    <div class="feature-card-title">Master Craftsmanship</div>
+                    <div class="feature-card-desc">Handcrafted by skilled artisans using traditional techniques combined
+                        with modern precision.</div>
+                </div>
+                <div class="feature-card anim-up delay-3">
+                    <div class="feature-card-icon" style="background:rgba(224,122,95,0.15)"><svg width="28" height="28"
+                            viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg></div>
+                    <div class="feature-card-title">Customer First</div>
+                    <div class="feature-card-desc">From design consultation to white-glove delivery, every interaction
+                        is designed to exceed expectations.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-alt)">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:60px" class="anim-up">
+                <div class="section-tag">
+                    <div class="section-tag-line"></div> The Team <div class="section-tag-line"></div>
+                </div>
+                <h2 class="section-title">Meet the Makers</h2>
+            </div>
+            <div class="team-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+                <div class="team-card anim-up delay-1"><img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80"
+                        alt="Marco" class="team-card-img">
+                    <div class="team-card-name">Marco Bianchi</div>
+                    <div class="team-card-role">Founder and Creative Director</div>
+                </div>
+                <div class="team-card anim-up delay-2"><img
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80"
+                        alt="Elena" class="team-card-img">
+                    <div class="team-card-name">Elena Rossi</div>
+                    <div class="team-card-role">Head of Design</div>
+                </div>
+                <div class="team-card anim-up delay-3"><img
+                        src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80"
+                        alt="Luca" class="team-card-img">
+                    <div class="team-card-name">Luca Moretti</div>
+                    <div class="team-card-role">Master Artisan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+                <div class="anim-left"><img
+                        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+                        alt="Showroom" class="hover-img-zoom"
+                        style="width:100%;height:500px;object-fit:cover;border-radius:var(--radius)"></div>
+                <div class="anim-right">
+                    <div class="section-tag">
+                        <div class="section-tag-line"></div> Visit Us
+                    </div>
+                    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:16px">
+                        Our Milan Showroom</h2>
+                    <p style="color:var(--text-light);line-height:1.7;margin-bottom:24px">Experience our collection in
+                        person at our flagship showroom in the heart of Milan's design district.</p>
+                    <div style="margin-bottom:24px">
+                        <div style="font-weight:600;margin-bottom:8px">Via Tortona 27</div>
+                        <div style="color:var(--text-light);font-size:0.9rem">20144 Milano MI, Italy</div>
+                        <div style="color:var(--text-light);font-size:0.9rem;margin-top:4px">Mon – Sat: 10:00 – 19:00
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary"><span>Get in Touch</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="nav-logo" style="color:white">MODER<span>NO</span></div>
+                    <p class="footer-brand-desc">Crafting premium furniture that transforms houses into homes.</p>
+                </div>
+                <div>
+                    <div class="footer-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Support</div>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Legal</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 MODERNO. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

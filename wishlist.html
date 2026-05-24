@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist — MODERNO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">MODER<span>NO</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-action-btn" title="Wishlist" onclick="window.location.href='wishlist.html'"><svg
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg><span class="nav-badge wishlist-badge">0</span></button>
+        <button class="nav-action-btn" onclick="window.location.href='cart.html'" title="Cart"><svg viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg><span class="nav-badge">0</span></button>
+        <button class="mobile-menu-btn" onclick="openMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <button class="mobile-close" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg></button>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a><a href="shop.html" onclick="closeMobileMenu()">Shop</a><a
+      href="about.html" onclick="closeMobileMenu()">About</a><a href="contact.html"
+      onclick="closeMobileMenu()">Contact</a><a href="wishlist.html" onclick="closeMobileMenu()">Wishlist</a><a
+      href="cart.html" onclick="closeMobileMenu()">Cart</a>
+  </div>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span class="breadcrumb-sep">›</span> <span>Wishlist</span>
+      </div>
+      <h1 class="page-header-title">Your Wishlist</h1>
+    </div>
+  </div>
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <div id="wishlistEmpty" class="empty-state" style="display:none">
+        <div class="empty-state-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg></div>
+        <div class="empty-state-title">Your wishlist is empty</div>
+        <div class="empty-state-desc">Save your favorite pieces for later</div>
+        <a href="shop.html" class="btn btn-primary"><span>Browse Products</span></a>
+      </div>
+      <div id="wishlistContent" style="display:none">
+        <div id="wishlistGrid" class="wishlist-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding:0">
+        <div class="nav-logo" style="color:white">MODER<span>NO</span></div>
+        <div class="footer-copy">© 2025 MODERNO. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    function renderWishlist() {
+      var wishlist = getWishlist(); var emptyEl = document.getElementById('wishlistEmpty'); var contentEl = document.getElementById('wishlistContent'); var gridEl = document.getElementById('wishlistGrid');
+      if (wishlist.length === 0) { emptyEl.style.display = 'block'; contentEl.style.display = 'none'; return; }
+      emptyEl.style.display = 'none'; contentEl.style.display = 'block';
+      var items = wishlist.map(function (id) { return PRODUCTS.find(function (p) { return p.id === id; }); }).filter(function (p) { return p; });
+      gridEl.innerHTML = items.map(function (p) {
+        return '<div class="wishlist-item">' +
+          '<div class="wishlist-item-img"><img src="' + p.image + '" alt="' + p.name + '"></div>' +
+          '<div class="wishlist-item-body">' +
+          '<div style="font-family:\'Playfair Display\',serif;font-size:1.05rem;font-weight:600;margin-bottom:4px">' + p.name + '</div>' +
+          '<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">' +
+          '<span style="font-size:1.1rem;font-weight:700">$' + p.price + '</span>' +
+          (p.oldPrice ? '<span style="font-size:0.9rem;color:var(--muted);text-decoration:line-through">$' + p.oldPrice + '</span>' : '') +
+          '</div>' +
+          '<div style="display:flex;gap:8px">' +
+          '<button class="btn btn-accent" style="flex:1;padding:10px;font-size:0.75rem" onclick="addToCart(' + p.id + ');renderWishlist();"><span>Add to Bag</span></button>' +
+          '<button class="btn btn-outline" style="padding:10px" onclick="toggleWishlist(' + p.id + ');renderWishlist();"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>' +
+          '</div></div></div>';
+      }).join('');
+      initScrollAnimations(); setTimeout(initCursor, 100);
+    }
+    document.addEventListener('DOMContentLoaded', renderWishlist);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — MODERNO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">MODER<span>NO</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-action-btn" title="Wishlist" onclick="window.location.href='wishlist.html'"><svg
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg><span class="nav-badge wishlist-badge">0</span></button>
+        <button class="nav-action-btn" onclick="window.location.href='cart.html'" title="Cart"><svg viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg><span class="nav-badge">0</span></button>
+        <button class="mobile-menu-btn" onclick="openMobileMenu()"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <button class="mobile-close" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg></button>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a><a href="shop.html" onclick="closeMobileMenu()">Shop</a><a
+      href="about.html" onclick="closeMobileMenu()">About</a><a href="contact.html"
+      onclick="closeMobileMenu()">Contact</a><a href="wishlist.html" onclick="closeMobileMenu()">Wishlist</a><a
+      href="cart.html" onclick="closeMobileMenu()">Cart</a>
+  </div>
+  <section style="padding-top:120px" class="section">
+    <div class="container">
+      <div class="breadcrumb" style="justify-content:flex-start;margin-bottom:32px"><a href="index.html">Home</a> <span
+          class="breadcrumb-sep">›</span> <a href="shop.html">Shop</a> <span class="breadcrumb-sep">›</span> <span
+          id="breadName">Product</span></div>
+      <div class="product-detail-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px">
+        <div class="anim-left">
+          <img id="mainImg" src="" alt="" class="product-gallery-main">
+          <div class="product-gallery-thumbs" id="thumbs"></div>
+        </div>
+        <div class="anim-right">
+          <div class="section-tag">
+            <div class="section-tag-line"></div> <span id="prodCat">Category</span>
+          </div>
+          <h1 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:16px" id="prodName">Product Name
+          </h1>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+            <span style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700" id="prodPrice">$0</span>
+            <span style="font-size:1.1rem;color:var(--muted);text-decoration:line-through" id="prodOldPrice"></span>
+            <span id="prodBadge"
+              style="display:none;background:var(--accent);color:white;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:50px;text-transform:uppercase;letter-spacing:0.05em"></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:24px;color:var(--accent3)">★★★★★ <span
+              style="color:var(--muted);font-size:0.85rem">(48 reviews)</span></div>
+          <p style="color:var(--text-light);line-height:1.7;margin-bottom:32px">Premium quality furniture crafted with
+            meticulous attention to detail. Built from sustainably sourced materials with hand-finished elements.</p>
+          <div style="margin-bottom:24px">
+            <div
+              style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:12px">
+              Color</div>
+            <div style="display:flex;gap:10px" id="colorDots"></div>
+          </div>
+          <div style="margin-bottom:32px">
+            <div
+              style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:12px">
+              Size / Variant</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap" id="sizeBtns"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px">
+            <div class="qty-control"><button class="qty-btn" onclick="changeQty(-1)">−</button>
+              <div class="qty-value" id="qtyValue">1</div><button class="qty-btn" onclick="changeQty(1)">+</button>
+            </div>
+            <button class="btn btn-primary" style="flex:1" onclick="addProductToCart()"><span>Add to Bag</span></button>
+            <button class="btn btn-outline" style="padding:14px" onclick="toggleWishlistProduct()"><svg width="20"
+                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:24px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-light)"><svg
+                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>Free white-glove delivery</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-light)"><svg
+                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+              </svg>30-day easy returns</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-light)"><svg
+                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>5-year warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:32px">You May Also
+        Like</h2>
+      <div id="relatedGrid" class="shop-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px"></div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding:0">
+        <div class="nav-logo" style="color:white">MODER<span>NO</span></div>
+        <div class="footer-copy">© 2025 MODERNO. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    var currentProduct = null; var productQty = 1;
+    function changeQty(d) { productQty = Math.max(1, productQty + d); document.getElementById('qtyValue').textContent = productQty; }
+    function addProductToCart() { if (currentProduct) addToCart(currentProduct.id, productQty); }
+    function toggleWishlistProduct() { if (currentProduct) toggleWishlist(currentProduct.id); }
+    function renderProduct() {
+      var id = parseInt(localStorage.getItem('moderno_product')) || 1;
+      currentProduct = PRODUCTS.find(function (p) { return p.id === id; }) || PRODUCTS[0]; productQty = 1;
+      document.getElementById('breadName').textContent = currentProduct.name;
+      document.getElementById('mainImg').src = currentProduct.image.replace('w=600', 'w=800');
+      document.getElementById('mainImg').alt = currentProduct.name;
+      document.getElementById('prodCat').textContent = currentProduct.category;
+      document.getElementById('prodName').textContent = currentProduct.name;
+      document.getElementById('prodPrice').textContent = '$' + currentProduct.price;
+      document.getElementById('qtyValue').textContent = '1';
+      document.title = currentProduct.name + ' — MODERNO';
+      var oldPriceEl = document.getElementById('prodOldPrice'); var badgeEl = document.getElementById('prodBadge');
+      if (currentProduct.oldPrice) { oldPriceEl.textContent = '$' + currentProduct.oldPrice; badgeEl.style.display = 'inline'; badgeEl.textContent = 'Sale'; }
+      else if (currentProduct.badge) { badgeEl.style.display = 'inline'; badgeEl.textContent = currentProduct.badge; oldPriceEl.textContent = ''; }
+      else { oldPriceEl.textContent = ''; badgeEl.style.display = 'none'; }
+      var colors = [currentProduct.color || '#8B8B8B', '#F0EBE3', '#2D2D2D', '#C8956C'];
+      document.getElementById('colorDots').innerHTML = colors.map(function (c, i) { return '<div class="color-dot ' + (i === 0 ? 'selected' : '') + '" style="background:' + c + '" onclick="this.parentElement.querySelectorAll(\'.color-dot\').forEach(function(d){d.classList.remove(\'selected\')});this.classList.add(\'selected\')"></div>'; }).join('');
+      var sizes = ['Standard', 'Queen', 'King'];
+      if (currentProduct.category === 'lamp' || currentProduct.category === 'rug') sizes = ['Small', 'Medium', 'Large'];
+      if (currentProduct.category === 'shelf') sizes = ['3-Shelf', '4-Shelf', '5-Shelf'];
+      document.getElementById('sizeBtns').innerHTML = sizes.map(function (s, i) { return '<button class="size-btn ' + (i === 1 ? 'selected' : '') + '" onclick="this.parentElement.querySelectorAll(\'.size-btn\').forEach(function(b){b.classList.remove(\'selected\')});this.classList.add(\'selected\')">' + s + '</button>'; }).join('');
+      var thumbs = document.getElementById('thumbs'); thumbs.innerHTML = '';
+      for (var i = 0; i < 4; i++) { var img = document.createElement('img'); img.src = currentProduct.image.replace('w=600', 'w=200'); img.alt = currentProduct.name; img.className = 'product-gallery-thumb' + (i === 0 ? ' active' : ''); img.onclick = (function (idx) { return function () { document.getElementById('mainImg').src = currentProduct.image.replace('w=600', 'w=800'); thumbs.querySelectorAll('.product-gallery-thumb').forEach(function (t) { t.classList.remove('active'); }); this.classList.add('active'); }; })(i); thumbs.appendChild(img); }
+      var related = PRODUCTS.filter(function (p) { return p.id !== currentProduct.id; }).slice(0, 4);
+      document.getElementById('relatedGrid').innerHTML = related.map(function (p) { return createProductCard(p); }).join('');
+      initScrollAnimations(); setTimeout(initCursor, 100);
+    }
+    document.addEventListener('DOMContentLoaded', renderProduct);
+  </script>
+</body>
+
+</html>
